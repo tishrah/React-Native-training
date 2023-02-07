@@ -1,4 +1,4 @@
-package com.nativeapp;
+package com.textview;
 
 import androidx.annotation.NonNull;
 
@@ -6,11 +6,10 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
-import com.facebook.react.PackageList;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class MyAppPackage implements ReactPackage {
@@ -19,7 +18,6 @@ public class MyAppPackage implements ReactPackage {
     @Override
     public List<ViewManager> createViewManagers(@NonNull ReactApplicationContext reactContext) {
         return Arrays.<ViewManager>asList(
-                new ReactImageManager(reactContext),
                 new ReactTextManager(reactContext)
         );
     }
@@ -28,10 +26,6 @@ public class MyAppPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(
             @NonNull ReactApplicationContext reactContext) {
-        List<NativeModule> modules = new ArrayList<>();
-
-        modules.add(new CalendarModule(reactContext));
-
-        return modules;
+               return new ArrayList<>();
     }
 }
